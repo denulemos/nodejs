@@ -1,1 +1,0 @@
-console.log("Hola Mundo"); // Imprimo en consola

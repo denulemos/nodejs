@@ -1,3 +1,13 @@
+# API REST 🚀️ 
+
+**API** => Application Programming interface
+
+**REST** => Representational State Transfer
+
+Es una forma de consumir un servicio que se aloja en un servidor que devuelve una respuesta. 
+
+Cliente (request) <--------http, JSON, XML ------> Servidor (response)
+
 # NodeJS 🚀️
 
 * Al instalar NodeJS se instala tambien NPM, un administrador de paquetes.
