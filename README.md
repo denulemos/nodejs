@@ -2,21 +2,39 @@
 
 * Al instalar NodeJS se instala tambien NPM, un administrador de paquetes.
 * Para ejecutar un proyecto hacemos `node nombreArchivo.js`
+* Se recomienda saber lo basico de JS para entender este repositorio
 * NodeJS es un framework de JS que nos permite escribir codigo backend en JS.
-* Posee modulos utiles como:
-  * HTTP: Modulo que funciona como server.
-  * File System: Lee y modifica archivos
-  * Path: Para trabajar con directorios y path de archivos.
-  * Assertion testing
+* El archivo `ModuloHttp.js` es el entrypoint de la aplicacion en NodeJS
+
+### Modulos
+
+Funcionalidades simples o complejas compuestas por uno o mas archivos JS. NodeJS ya viene con varios modulos en si mismo (Modulo de nucleo).
+
+Posee modulos utiles como:
+
+* **HTTP**: Modulo que funciona como server. Ejecuta JS del lado del servidor.
+* **File System (fs)**: Lee y modifica archivos
+* **Path**: Para trabajar con directorios y path de archivos.
+
+Por ejemplo, puedo hacer un archivo que tenga operaciones aritmeticas, e importarlo en otro archivo.
+
+Los modulos que hagamos nosotros seran **modulos locales**
+
+### Nodemon
+
+Detecta nos cambios de nuestro codigo nodeJS y reinicia automaticamente, es una **dependencia**, se instala con `npm install nodemon`
 
 # NPM 🚀️
 
 Cuando comenzamos un nuevo proyecto, node.js genera una carpeta en nuestro proyecto llamado `package.json` el cual contiene las dependencias de nuestro proyecto. Los packages son guardados en una carpeta llamada `node_modules`. Esta carpeta puede ser local de nuestro proyecto o global, algo que incluye a todo.
 
+* `npm init` => inicializar un proyecto node en nuestro proyecto. Nos pide nombre del proyecto, version, descripcion y que entry point usará, esto nos **inicializara un package.json**
+
 ### Package.json
 
 * Se suele poner un autor y descripcion del proyecto por si planeamos venderlo a futuro
 * Podemos usar la seccion `keyboard` para poner palabras claves que identifiquen al proyecto
+* Si agrego un **script personalizado**, que no sea, por ejemplo, `start`, tendré que correr el comando con `npm run comandoPersonalizado`.
 * El proyecto tambien necesita una **licencia**, las mas comunes para proyectos open source son MIT y BSD, esto tambien se aclara en el json
 * Tambien deberiamos plasmar en que version se encuentra el proyecto actualmente con **version**
 * En **dependencies** tenemos todo lo que npm instaló, nuestras dependencias, y sus versiones
@@ -75,9 +93,13 @@ Ejemplo de package.json =>
 }
 ```
 
+### package.lock.json
 
+Se encarga de controlar las versiones de las dependencias actuales de nuestro proyecto. Si no lo encuentra, va a instalar las versiones mas recientes de las dependencias, lo que puede dar a fallas al hacer un `npm install` en el proyecto recien clonado (sin node_modules)
 
 # Express 🚀️
 
-* Express corre entre el código backend de Node y el front-end, manejando el routing de la aplicación misma. Para crear un objeto express, solo creo el objeto en mi js de mi aplicación.
-
+* Express corre entre el código backend de Node y el front-end, manejando el routing de la aplicación misma.
+* Para crear un objeto express, solo creo el objeto en mi js de mi aplicación.
+* Nos hará escribir mucho menos codigo que con NodeJS puro
+* Funciona mejor si es combinado con TypeScript
