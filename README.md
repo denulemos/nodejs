@@ -1,12 +1,22 @@
-# API REST 🚀️ 
+# API REST 🚀️
 
 **API** => Application Programming interface
 
 **REST** => Representational State Transfer
 
-Es una forma de consumir un servicio que se aloja en un servidor que devuelve una respuesta. 
+Es una forma de consumir un servicio que se aloja en un servidor que devuelve una respuesta.
 
 Cliente (request) <--------http, JSON, XML ------> Servidor (response)
+
+#### Post
+
+* Los datos no viajaran por la URL, se recomienda para los Login.
+* Enviar datos al servidor
+
+#### Get
+
+* La informacion va a pasar como texto plano, lo cual es inseguro si lo queremos para hacer un login
+* Obtener datos del servidor
 
 # NodeJS 🚀️
 
@@ -30,9 +40,6 @@ Por ejemplo, puedo hacer un archivo que tenga operaciones aritmeticas, e importa
 
 Los modulos que hagamos nosotros seran **modulos locales**
 
-### Nodemon
-
-Detecta nos cambios de nuestro codigo nodeJS y reinicia automaticamente, es una **dependencia**, se instala con `npm install nodemon`
 
 # NPM 🚀️
 
@@ -113,3 +120,19 @@ Se encarga de controlar las versiones de las dependencias actuales de nuestro pr
 * Para crear un objeto express, solo creo el objeto en mi js de mi aplicación.
 * Nos hará escribir mucho menos codigo que con NodeJS puro
 * Funciona mejor si es combinado con TypeScript
+
+##  Dependencias
+
+#### body-parser
+
+Es una dependencia para recuperar los datos que enviamos en el body via POST en el backend. 
+
+Instalacion => `npm i body-parser`
+
+Inicializacion en codigo (x-www.form-urlencoded) => `app.use(bodyParser.urlencoded({extended: false}));`
+
+Soporte para JSON (raw) => `app.use(bodyParser.json());`
+
+#### Nodemon
+
+Detecta nos cambios de nuestro codigo nodeJS y reinicia automaticamente, es una **dependencia**, se instala con `npm install nodemon`
